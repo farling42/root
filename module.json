@@ -9,12 +9,9 @@
     }
   ],
   "version": "2.1",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
   "compatibility": {
-    "minimum": "11",
-    "maximum": "11",
-    "verified": "11.315"
+    "minimum": "12",
+    "verified": "12.331"
   },
   "relationships": {
     "systems": [
@@ -23,8 +20,8 @@
             "type": "system",
             "manifest": "https://asacolips-artifacts.s3.amazonaws.com/pbta/master/system.json",
             "compatibility": {
-                "verified": "0.9.1",
-                "minimum": "0.8.0"
+                "verified": "1.1.4",
+                "minimum": "1.1.4"
             }
         }
     ]

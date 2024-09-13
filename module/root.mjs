@@ -680,7 +680,7 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
     let loadCalculate = game.settings.get('root', 'load');
 
     if (loadCalculate) {
-      const carryingInput = html.find('input[name="system.attrLeft.carrying.value"]');
+      const carryingInput = html.find('input[name="system.attributes.carrying.value"]');
       carryingInput.attr('readonly', 'readonly');
       let carryingLoad
       let calculateLoad = () => {
@@ -695,12 +695,12 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
       };
       calculateLoad();
       await actor.update({"system.attrLeft.carrying.value": carryingLoad});
-      const burdenedInput = html.find('input[name="system.attrLeft.burdened.value"]');
+      const burdenedInput = html.find('input[name="system.attributes.burdened.value"]');
       burdenedInput.attr('readonly', 'readonly');
       let migthValue = actor.system.stats.might.value;
       let burdenedLoad = 4 + migthValue;
       await actor.update({"system.attrLeft.burdened.value": burdenedLoad});
-      const maxInput = html.find('input[name="system.attrLeft.max.value"]');
+      const maxInput = html.find('input[name="system.attributes.max.value"]');
       maxInput.attr('readonly', 'readonly');
       let maxLoad = burdenedLoad * 2;
       await actor.update({"system.attrLeft.max.value": maxLoad})
@@ -911,49 +911,49 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
 
     const factionsReputations = [
       [
-        html.find('input[name="system.attrTop.reputation.options.1.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.2.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.3.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.4.values.0.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.5.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.6.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.7.values.5.value"]')
+        html.find('input[name="system.attributes.reputation.options.1.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.2.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.3.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.4.values.0.value"]'),
+        html.find('input[name="system.attributes.reputation.options.5.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.6.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.7.values.5.value"]')
       ],
       [
-        html.find('input[name="system.attrTop.reputation.options.9.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.10.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.11.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.12.values.0.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.13.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.14.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.15.values.5.value"]')
+        html.find('input[name="system.attributes.reputation.options.9.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.10.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.11.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.12.values.0.value"]'),
+        html.find('input[name="system.attributes.reputation.options.13.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.14.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.15.values.5.value"]')
       ],
       [
-        html.find('input[name="system.attrTop.reputation.options.17.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.18.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.19.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.20.values.0.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.21.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.22.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.23.values.5.value"]')
+        html.find('input[name="system.attributes.reputation.options.17.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.18.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.19.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.20.values.0.value"]'),
+        html.find('input[name="system.attributes.reputation.options.21.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.22.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.23.values.5.value"]')
       ],
       [
-        html.find('input[name="system.attrTop.reputation.options.25.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.26.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.27.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.28.values.0.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.29.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.30.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.31.values.5.value"]')
+        html.find('input[name="system.attributes.reputation.options.25.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.26.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.27.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.28.values.0.value"]'),
+        html.find('input[name="system.attributes.reputation.options.29.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.30.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.31.values.5.value"]')
       ],
       [
-        html.find('input[name="system.attrTop.reputation.options.33.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.34.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.35.values.3.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.36.values.0.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.37.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.38.values.5.value"]'),
-        html.find('input[name="system.attrTop.reputation.options.39.values.5.value"]')
+        html.find('input[name="system.attributes.reputation.options.33.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.34.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.35.values.3.value"]'),
+        html.find('input[name="system.attributes.reputation.options.36.values.0.value"]'),
+        html.find('input[name="system.attributes.reputation.options.37.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.38.values.5.value"]'),
+        html.find('input[name="system.attributes.reputation.options.39.values.5.value"]')
       ]
     ];
 
@@ -961,153 +961,153 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
 
     // Handle reputation increments
     const firstFactionNotoriety = [
-      html.find('input[name="system.attrTop.reputation.options.1.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.1.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.1.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.2.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.2.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.2.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.3.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.3.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.3.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.1.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.1.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.1.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.2.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.2.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.2.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.3.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.3.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.3.values.0.value"]')
     ];
 
     const firstFactionPrestige = [
-      html.find('input[name="system.attrTop.reputation.options.7.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.7.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.7.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.7.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.7.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.6.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.6.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.6.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.6.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.6.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.5.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.5.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.5.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.5.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.5.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.7.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.7.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.7.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.7.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.7.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.6.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.6.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.6.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.6.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.6.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.5.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.5.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.5.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.5.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.5.values.0.value"]')
     ];
 
     const secondFactionNotoriety = [
-      html.find('input[name="system.attrTop.reputation.options.9.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.9.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.9.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.10.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.10.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.10.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.11.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.11.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.11.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.9.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.9.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.9.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.10.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.10.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.10.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.11.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.11.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.11.values.0.value"]')
     ];
 
     const secondFactionPrestige = [
-      html.find('input[name="system.attrTop.reputation.options.15.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.15.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.15.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.15.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.15.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.14.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.14.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.14.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.14.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.14.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.13.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.13.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.13.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.13.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.13.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.15.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.15.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.15.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.15.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.15.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.14.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.14.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.14.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.14.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.14.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.13.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.13.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.13.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.13.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.13.values.0.value"]')
     ];
 
     const thirdFactionNotoriety = [
-      html.find('input[name="system.attrTop.reputation.options.17.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.17.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.17.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.18.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.18.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.18.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.19.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.19.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.19.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.17.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.17.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.17.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.18.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.18.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.18.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.19.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.19.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.19.values.0.value"]')
     ];
 
     const thirdFactionPrestige = [
-      html.find('input[name="system.attrTop.reputation.options.23.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.23.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.23.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.23.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.23.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.22.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.22.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.22.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.22.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.22.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.21.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.21.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.21.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.21.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.21.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.23.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.23.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.23.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.23.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.23.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.22.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.22.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.22.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.22.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.22.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.21.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.21.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.21.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.21.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.21.values.0.value"]')
     ];
 
     const fourthFactionNotoriety = [
-      html.find('input[name="system.attrTop.reputation.options.25.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.25.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.25.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.26.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.26.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.26.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.27.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.27.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.27.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.25.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.25.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.25.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.26.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.26.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.26.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.27.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.27.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.27.values.0.value"]')
     ];
 
     const fourthFactionPrestige = [
-      html.find('input[name="system.attrTop.reputation.options.31.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.31.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.31.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.31.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.31.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.30.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.30.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.30.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.30.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.30.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.29.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.29.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.29.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.29.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.29.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.31.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.31.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.31.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.31.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.31.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.30.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.30.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.30.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.30.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.30.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.29.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.29.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.29.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.29.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.29.values.0.value"]')
     ];
 
     const fifthFactionNotoriety = [
-      html.find('input[name="system.attrTop.reputation.options.33.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.33.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.33.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.34.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.34.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.34.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.35.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.35.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.35.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.33.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.33.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.33.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.34.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.34.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.34.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.35.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.35.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.35.values.0.value"]')
     ];
 
     const fifthFactionPrestige = [
-      html.find('input[name="system.attrTop.reputation.options.39.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.39.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.39.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.39.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.39.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.38.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.38.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.38.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.38.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.38.values.0.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.37.values.4.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.37.values.3.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.37.values.2.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.37.values.1.value"]'),
-      html.find('input[name="system.attrTop.reputation.options.37.values.0.value"]')
+      html.find('input[name="system.attributes.reputation.options.39.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.39.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.39.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.39.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.39.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.38.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.38.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.38.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.38.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.38.values.0.value"]'),
+      html.find('input[name="system.attributes.reputation.options.37.values.4.value"]'),
+      html.find('input[name="system.attributes.reputation.options.37.values.3.value"]'),
+      html.find('input[name="system.attributes.reputation.options.37.values.2.value"]'),
+      html.find('input[name="system.attributes.reputation.options.37.values.1.value"]'),
+      html.find('input[name="system.attributes.reputation.options.37.values.0.value"]')
     ];
 
     handleCheckboxIncrements(firstFactionNotoriety);
@@ -1254,36 +1254,36 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
 
     // Handle resouce increments
     const injuryResource = [
-      html.find('input[name="system.attrLeft.resource.options.0.values.11.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.9.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.7.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.5.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.3.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.2.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.1.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.0.values.0.value"]')
+      html.find('input[name="system.attributes.resource.options.0.values.11.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.9.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.7.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.5.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.3.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.2.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.1.value"]'),
+      html.find('input[name="system.attributes.resource.options.0.values.0.value"]')
     ];
 
     const exhaustionResource = [
-      html.find('input[name="system.attrLeft.resource.options.1.values.11.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.9.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.7.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.5.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.3.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.2.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.1.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.1.values.0.value"]')
+      html.find('input[name="system.attributes.resource.options.1.values.11.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.9.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.7.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.5.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.3.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.2.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.1.value"]'),
+      html.find('input[name="system.attributes.resource.options.1.values.0.value"]')
     ];
 
     const depletionResource = [
-      html.find('input[name="system.attrLeft.resource.options.2.values.11.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.9.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.7.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.5.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.3.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.2.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.1.value"]'),
-      html.find('input[name="system.attrLeft.resource.options.2.values.0.value"]')
+      html.find('input[name="system.attributes.resource.options.2.values.11.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.9.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.7.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.5.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.3.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.2.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.1.value"]'),
+      html.find('input[name="system.attributes.resource.options.2.values.0.value"]')
     ];
 
     handleCheckboxIncrements(injuryResource);
@@ -1471,7 +1471,7 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
 
     // Prepend addBox1
     let npcAddWear1 = `<input type="checkbox" name="flags.root.npcWear.addBox1" data-dtype="Boolean" ${addNPCWearOne ? 'checked' : ''}></input>`
-    let npcWear1 = html.find('input[name="system.attrTop.wear.options.0.values.0.value"]');
+    let npcWear1 = html.find('input[name="system.attributes.wear.options.0.values.0.value"]');
     npcWear1.before(npcAddWear1);
     // Set the event listeners for Wear
     let wearNPCFaPlus = html.find('.cell--wear .fa-plus-square');
@@ -1604,63 +1604,63 @@ Hooks.on("renderActorSheet", async function (app, html, data) {
 
     // Handle NPC resource increments
     const injuryNPCResource = [
-      html.find('input[name="system.attrTop.injury.options.0.values.22.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.20.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.18.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.16.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.14.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.12.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.10.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.8.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.6.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.4.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.2.value"]'),
-      html.find('input[name="system.attrTop.injury.options.0.values.0.value"]')
+      html.find('input[name="system.attributes.injury.options.0.values.22.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.20.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.18.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.16.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.14.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.12.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.10.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.8.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.6.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.4.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.2.value"]'),
+      html.find('input[name="system.attributes.injury.options.0.values.0.value"]')
     ];
 
     const exhaustionNPCResource = [
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.22.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.20.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.18.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.16.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.14.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.12.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.10.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.8.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.6.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.4.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.2.value"]'),
-      html.find('input[name="system.attrTop.exhaustion.options.0.values.0.value"]')
+      html.find('input[name="system.attributes.exhaustion.options.0.values.22.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.20.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.18.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.16.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.14.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.12.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.10.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.8.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.6.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.4.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.2.value"]'),
+      html.find('input[name="system.attributes.exhaustion.options.0.values.0.value"]')
     ];
 
     const wearNPCResource = [
-      html.find('input[name="system.attrTop.wear.options.0.values.22.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.20.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.18.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.16.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.14.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.12.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.10.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.8.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.6.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.4.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.2.value"]'),
-      html.find('input[name="system.attrTop.wear.options.0.values.0.value"]')
+      html.find('input[name="system.attributes.wear.options.0.values.22.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.20.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.18.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.16.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.14.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.12.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.10.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.8.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.6.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.4.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.2.value"]'),
+      html.find('input[name="system.attributes.wear.options.0.values.0.value"]')
     ];
 
     const moraleNPCResource = [
-      html.find('input[name="system.attrTop.morale.options.0.values.22.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.20.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.18.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.16.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.14.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.12.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.10.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.8.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.6.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.4.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.2.value"]'),
-      html.find('input[name="system.attrTop.morale.options.0.values.0.value"]')
+      html.find('input[name="system.attributes.morale.options.0.values.22.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.20.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.18.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.16.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.14.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.12.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.10.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.8.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.6.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.4.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.2.value"]'),
+      html.find('input[name="system.attributes.morale.options.0.values.0.value"]')
     ];
 
     handleCheckboxIncrements(injuryNPCResource);
